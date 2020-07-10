@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mathworks">
+    <meta name="author" content="">
+
+    <title>Hack Day 2020: {{ title }}</title>
+
+    <!-- Include Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this page -->
+    <link href="{{ url_for('static', filename= 'dashboard.css') }}" rel="stylesheet">
+</head>
+
+
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Mathworks Hack Day 2020</a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar for Navigation -->
+
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if title == 'Home' else '' }}" href="{{ url_for('index')}}">
+                            <span data-feather="home"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if title == 'By State' else '' }}" href="{{ url_for('state')}}">
+                            <span data-feather="map-pin"></span>
+                            By State
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if title == 'By School' else '' }}" href="{{ url_for('school')}}">
+                            <span data-feather="trending-up"></span>
+                            By School
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Project Information</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if title == 'The Team' else '' }}" href="{{ url_for('team')}}">
+                            <span data-feather="users"></span>
+                            The Team
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if title == 'Our Datasets' else '' }}" href="{{ url_for('dataset')}}">
+                            <span data-feather="database"></span>
+                            Datasets
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content Here -->
+
+
+
+        {% block content %}
+
+        {% endblock %}
+
+        <!-- Page Content Ends-->
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+
+<!-- Graphs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 4,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
