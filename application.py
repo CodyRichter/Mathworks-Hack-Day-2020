@@ -29,4 +29,7 @@ def dataset():
 
 
 if __name__ == '__main__':
+    # for dataset in open('static/datasets'):
+    #     data = load_data(dataset)
+
     app.run()
