@@ -23,9 +23,9 @@ def team():
     return render_template('team.html', title='The Team')
 
 
-@app.route('/dataset')
-def dataset():
-    return render_template('dataset.html', title='Our Datasets')
+@app.route('/tools')
+def tools():
+    return render_template('tools.html', title='Tools')
 
 
 if __name__ == '__main__':

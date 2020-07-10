@@ -93,28 +93,9 @@ body {
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
-/*.fixed-bg {*/
-/*    background-image: url(lakeside_campus.jpg);*/
-/*    height: 100vh;*/
-/*    background-repeat: no-repeat;*/
-/*    background-attachment: fixed;*/
-/*    background-size: cover;*/
-/*    overflow: scroll;*/
-/*    border-radius: 0.6vw;*/
-/*    box-shadow: 0 0 8px 8px rgba(46, 46, 46, 0.75) inset;*/
-/*}*/
-
-/*.fixed-bg-overlay {*/
-/*    background-color: rgba(46, 46, 46, 0.75);*/
-/*    height: 100vh;*/
-/*    background-repeat: no-repeat;*/
-/*    background-attachment: fixed;*/
-/*    background-size: cover;*/
-/*    overflow: scroll;*/
-/*}*/
 
 .fixed-bg {
-    min-height: 100vh;
+    min-height: 97vh;
     background: url(lakeside_campus.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -124,7 +105,7 @@ body {
 
 .fixed-bg-overlay {
     position: absolute;
-    min-height: 100vh;
+    min-height: 97vh;
     min-width: 100%;
     left: 0;
     background: rgba(46, 46, 46, 0.75);

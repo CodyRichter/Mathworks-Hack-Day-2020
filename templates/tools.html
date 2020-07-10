@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="bg-white pl-4 pr-4 pt-4 pb-4 mb-4"
+         style="border-radius: 0.6vw; min-height: 95vh">
+
+        <div class="container text-center">
+            <p class="display-3">Tools</p>
+            <hr>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="container text-center">
+            <p class="h2">Web</p>
+            <div class="row text-center justify-content-center">
+                <div class="col-sm-4">
+                    <div class="card pb-4">
+                        <img class="card-img-top" src="{{ url_for('static', filename= 'bootstrap_logo.png') }}"
+                             alt="Tool Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Frontend Layout</h5>
+                            <hr>
+
+                            <p class="card-text" style="font-size: 1.5em">
+                                <b>Bootstrap</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card pb-4">
+                        <img class="card-img-top" src="{{ url_for('static', filename= 'chartjs_logo.png') }}"
+                             alt="Tool Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Frontend Graphs</h5>
+                            <hr>
+
+                            <p class="card-text" style="font-size: 1.5em">
+                                <b>ChartJS</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card pb-4">
+                        <img class="card-img-top" src="{{ url_for('static', filename= 'flask_logo.png') }}"
+                             alt="Tool Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Backend</h5>
+                            <hr>
+
+                            <p class="card-text" style="font-size: 1.5em">
+                                <b>Flask</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container text-center">
+            <p class="h2">Data Processing</p>
+
+            <div class="row text-center justify-content-center">
+                <div class="col-sm-4">
+                    <div class="card pb-4">
+                        <img class="card-img-top" src="{{ url_for('static', filename= 'matlab_logo.gif') }}"
+                             alt="Tool Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Scraping</h5>
+                            <hr>
+
+                            <p class="card-text" style="font-size: 1.5em">
+                                <b>MATLAB</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
