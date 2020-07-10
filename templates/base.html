@@ -11,6 +11,7 @@
     <!-- Include Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename= 'icon.png') }}" />
 
     <!-- Custom styles for this page -->
     <link href="{{ url_for('static', filename= 'dashboard.css') }}" rel="stylesheet">
@@ -18,16 +19,18 @@
 
 
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Mathworks Hack Day 2020</a>
-</nav>
 
 <div class="container-fluid">
+
     <div class="row">
 
         <!-- Sidebar for Navigation -->
 
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="container mt-4">
+                <img class="img-fluid" src="{{ url_for('static', filename= 'Hack Day Logo.png') }}" alt="Hack Day 2020">
+            </div>
+
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -73,10 +76,11 @@
         <!-- Page Content Here -->
 
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            {% block content %}
 
-        {% block content %}
-
-        {% endblock %}
+            {% endblock %}
+        </main>
 
         <!-- Page Content Ends-->
     </div>
